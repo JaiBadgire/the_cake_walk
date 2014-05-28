@@ -1,0 +1,16 @@
+Hello,<br><br>
+
+
+your order has been processed.<br>
+here are the details<br>
+
+<p>
+  <% @cart.line_items.each do |item|%>
+      Cake Name: <%= item.cakestore.cake_name%>
+      Price:<%= number_to_currency(item.cakestore.price)%>  
+  <% end %>
+</p><br><br>
+
+
+Thanks,<br>
+Cakedelights Team.

@@ -1,0 +1,34 @@
+
+<div>
+  <h1>The Pastry shop</h1>
+  <ul>
+    <% count=0 %>
+    <% @cakes_gallery.each do |cake|%>
+    <% if (count % 3) == 0%>
+    <% end %>
+    <% count+=1 %>
+          <li>
+              <div>
+                <%= image_tag cake.image.url ,:height=>"100",:width=>"100" %>
+                  <div>
+                    
+                    <br><br><br><br><br> <br>
+                    Name : <%= cake.cake_name %><br />
+                    Weight :<%= cake.cake_weight %>k.g.<br />
+                    Price : <%= cake.price %>$<br />
+                    Occasion : <%= cake.occasion %> 
+                    <div>
+                      <div>
+                        <p  align="left">
+                      <%= button_to 'Add to Cart', line_items_path(:cakestore_id => cake.id) %>
+                        </p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                      
+              </div>
+          </li><% end %>
+  </ul>
+</div>

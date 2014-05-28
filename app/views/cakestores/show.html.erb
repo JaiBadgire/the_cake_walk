@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cake image:</b>
+  <%= image_tag @cakestore.image.url ,:height=>"200",:width=>"200"%>
+</p>
+
+<p>
+  <strong>Cake name:</strong>
+  <%= @cakestore.cake_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @cakestore.description %>
+</p>
+
+<p>
+  <strong>Cake weight:</strong>
+  <%= @cakestore.cake_weight %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @cakestore.price %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @cakestore.quantity %>
+</p>
+
+<p>
+  <strong>Occasion:</strong>
+  <%= @cakestore.occasion %>
+</p>
+
+<%= link_to 'Edit', edit_cakestore_path(@cakestore) %> |
+<%= link_to 'Back', cakestores_path %>

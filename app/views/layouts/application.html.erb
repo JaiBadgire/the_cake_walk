@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TheCakeWalk</title>
+ <link data-turbolinks-track="true" href="/assets/account.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/admin.css?body=1" media="all" rel="stylesheet" />
+
+<link data-turbolinks-track="true" href="/assets/cakestores.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/scaffolds.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/style.css?body=1" media="all" rel="stylesheet" />
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="header">
+		<div>
+			<div>
+				<div id="logo">
+					<a href="/account/index"><img src="/assets/logo.gif" alt="Logo"/></a>
+				</div>
+				<div>
+					<div>
+						<% if session[:user] %>
+                                                  <a href="/account/logout">Logout</a>
+                                                  <a href="/account/reset_password">Change Your Password</a>
+                                                <% else %>
+                                                  <a href="/account/signin">Login</a>
+                                                  <a href="/account/signup">Signup</a>
+                                                  
+                                                  
+                                                <% end %>
+                                        </div>
+					<%= form_for(:search,:url=>"/gallery/search") do |f| %>
+						<input type="text" name="search" maxlength="30" />
+						<input type="submit" value="" id="searchbtn" />
+					<% end %>
+				</div>
+			</div>
+			<ul>
+				<li class="current"><a href="/account/index">Home</a></li>
+				<li><a href="/account/pastryshop">The Pastry shop</a></li>
+				<li><a href="/account/services">Services</a></li>
+                                <li><a href="/account/about">About Us</a></li>
+				<li><a href="/account/contact">Contact Us</a></li>
+			</ul>
+                        <% if controller.action_name == "index" %>
+			<div id="section">
+				<ul>
+					<li align="center"><h2>Available</h2></li>
+                                        <li align="center">cheese cakes</li>
+					<li align="center">sponge cakes</li>
+					<li align="center">butter cakes</li>
+					<li align="center">layer cakes</li>
+					<li align="center">sheet cakes</li>
+					<li align="center">cupcakes</li>
+					<li align="center">fondant cakes</li>
+					<li align="center">swiss roll</li>
+					<li align="center">other desserts</li>
+				</ul>
+				<a href="/account/signin"><img src="/assets/wedding-cupcakes-large.jpg" alt="Image"/></a>
+			</div>
+                        <% else %>
+                        <div class="section">
+				<a href="index.html"><img src="/assets/wedding-cupcakes-small.jpg" alt="Image"/></a>
+			</div>
+                        <% end %>
+		</div>
+                
+	</div>
+	<div id="content">
+		<%= yield %>
+	</div>
+	<div id="footer">
+		<div class="home">
+			<div>
+				<div class="aside">
+					<div class="signup">
+						<div>
+							<b>Too <span>BUSY</span> to shop?</b>
+							<a href="signin.html">Sign up for free</a>
+							<p>and we&#39;ll deliver it on your doorstep</p>
+						</div>
+					</div>
+					<div class="connect">
+						<span>Follow Us</span>
+						<ul>
+							<li><a href="http://facebook.com/freewebsitetemplates" target="_blank" class="facebook">Facebook</a></li>
+							<li><a href="http://twitter.com/fwtemplates" target="_blank" class="twitter">Twitter</a></li>
+							<li><a href="#" class="subscribe">Subscribe</a></li>
+							<li><a href="http://www.flickr.com/freewebsitetemplates/" target="_blank" class="flicker">Flicker</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="section">
+					<div>
+						<div>
+							<h3><a href="index.html">Daily Cake Surprise</a></h3>
+							<p>To make our customer happy we are bringing some surprises for our customers. Every week we'll play a lottery to pickup one customer's name from our system and that lucky one will get one free cake of his/her choice. <br>*Conditions applied<br><br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="featured">
+			<ul>
+				<li class="first">
+					<a href="index.html"><img src="/assets/fruit-cake.jpg" alt="Image" /></a>
+					<h2><a href="index.html">Tips on how to preserve</a></h2>
+					<p>Store cakes in their baking pans, tightly covered or in a cake-saver or under a large inverted bowl or can be stored in the refrigerator</p>
+				</li>
+				<li>
+					<a href="index.html"><img src="/assets/fiesta-cake.jpg" alt="Image" width=200 height=90 /></a>
+					<h2><a href="index.html">Menu of the day: Fiesta Cake</a></h2>
+					<p>It's time for a party! This cake features streamers for a festive celebration. Customize your cake with up to three colors and a message up to 50 characters</p>
+				</li>
+				<li>
+					<a href="index.html"><img src="/assets/fruit.jpg" alt="Image" /></a>
+					<h2><a href="index.html">Fruit menu for your diet</a></h2>
+					<p>They say that good things come in small packages and that's especially true for the blueberry. Stay longer stay healthy</p>
+				</li>
+				<li>
+					<a href="index.html"><img src="/assets/desserts.jpg" alt="Image" /></a>
+					<h2><a href="index.html">Desserts for every occassion</a></h2>
+					<p>The Perfect Finish should be playfully organized and we help you to do so by recipes easy to pack for potlucks,Straight from the Oven, includes fruit pies best served warm;</p>
+				</li>
+			</ul>
+		</div>
+		<div id="navigation">
+			<div>
+				<ul>
+					
+				</ul>
+				<p></p>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>

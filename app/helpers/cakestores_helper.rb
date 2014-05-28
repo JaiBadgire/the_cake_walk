@@ -1,0 +1,2 @@
+module CakestoresHelper
+end

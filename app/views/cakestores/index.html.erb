@@ -1,0 +1,36 @@
+
+
+<h1>Listing cakestores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cake name</th>
+      <th>Description</th>
+      <th>Cake weight</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Occasion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cakestores.each do |cakestore| %>
+      <tr>
+        <td><%= cakestore.cake_name %></td>
+        <td><%= cakestore.description %></td>
+        <td><%= cakestore.cake_weight %></td>
+        <td><%= cakestore.price %></td>
+        <td><%= cakestore.quantity %></td>
+        <td><%= cakestore.occasion %></td>
+        <td><%= link_to 'Show', cakestore %></td>
+        <td><%= link_to 'Edit', edit_cakestore_path(cakestore) %></td>
+        <td><%= link_to 'Destroy', cakestore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Cakestore', new_cakestore_path %>

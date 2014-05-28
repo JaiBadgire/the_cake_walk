@@ -1,0 +1,45 @@
+<%= form_for(@cakestore) do |f| %>
+  <% if @cakestore.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cakestore.errors.count, "error") %> prohibited this cakestore from being saved:</h2>
+
+      <ul>
+      <% @cakestore.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cake_name %><br>
+    <%= f.text_field :cake_name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :cake_weight %><br>
+    <%= f.number_field :cake_weight %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :occasion %><br>
+    <%= f.text_field :occasion %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

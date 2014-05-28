@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cake_name: MyString
+  description: MyText
+  cake_weight: 1
+  price: 1
+  quantity: 1
+  occasion: MyString
+
+two:
+  cake_name: MyString
+  description: MyText
+  cake_weight: 1
+  price: 1
+  quantity: 1
+  occasion: MyString
