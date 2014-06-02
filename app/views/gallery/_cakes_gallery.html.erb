@@ -20,7 +20,7 @@
                     <div>
                       <div>
                         <p  align="left">
-                      <%= button_to 'Add to Cart', line_items_path(:cakestore_id => cake.id) %>
+                      <%= button_to 'Add to Cart', line_items_path(:cakestore_id => cake.id), remote: true %>
                         </p>
                       </div>
                     </div>

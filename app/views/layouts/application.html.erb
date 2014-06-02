@@ -68,7 +68,15 @@
                 
 	</div>
 	<div id="content">
-		<%= yield %>
+          
+                   <% if (controller_name == "gallery" and action_name == "index") %>
+                     
+                        <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+                         <%= render @cart %>
+                      <% end %>                     
+                   <% end %>
+                   <%= yield %>
+		
 	</div>
 	<div id="footer">
 		<div class="home">
@@ -128,7 +136,7 @@
 		<div id="navigation">
 			<div>
 				<ul>
-					
+
 				</ul>
 				<p></p>
 			</div>

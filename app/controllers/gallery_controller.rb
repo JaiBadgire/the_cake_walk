@@ -1,5 +1,6 @@
 class GalleryController < ApplicationController
   include ActiveMerchant::Billing
+  before_action :set_cart
   
   def index
      @cakes_gallery = Cakestore.all
@@ -53,3 +54,8 @@ class GalleryController < ApplicationController
      @cakes_gallery = Cakestore.find_by_sql ["Select * from cakestores WHERE cake_name like ? or occasion like ? or description like ?",params[:search],params[:search],params[:search]]	  
   end
 end
+
+private
+  def set_cart
+  	@cart = current_cart
+  end

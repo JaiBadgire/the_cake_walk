@@ -65,7 +65,6 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy
-    puts "hi"
     @cart = Cart.find(params[:id])
     @cart.destroy    
     redirect_to :controller => "gallery", :action => "index"
