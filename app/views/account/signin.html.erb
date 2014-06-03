@@ -1,23 +1,24 @@
 
 <div>
-    <div>
+    <div><%= flash[:notice] %>
         <div>
             <frameset>
             <span>SIGN-IN <%= form_for(:user) do |f| %></span>
-            <table>
-                    <tr>
-                            <td><%= f.label 'email:' %></td>
-                            <td><%= f.text_field :email %></td>
-                    </tr>
-                    <tr>
-                            <td><%= f.label 'password:' %></td>
-                            <td><%= f.password_field :password %></td>
-                    </tr>
-                    
-            </table>
+               <table>
+                      <tr>
+                              <td><font color="red">*</font><%= f.label 'email:' %></td>
+                              <td><%= f.text_field :email %></td>
+                      </tr>
+                      <tr>
+                              <td><font color="red">*</font><%= f.label 'password:' %></td>
+                              <td><%= f.password_field :password %></td>
+                      </tr>
+                      
+              </table>
             <%= f.submit 'Sign In' %>
             <%= f.submit 'Clear Form', :type => 'reset' %>
           <% end %>
+          <p>(fields with <font color="red">*</font> are compulsory)</p>
           <%= link_to "Forget your password?" ,:controller=>"account",:action=>"forget_password" %>
           </frameset>
         </div>

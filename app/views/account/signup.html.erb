@@ -3,16 +3,16 @@
 				<div>					
                                       <span>SIGN-UP <%= form_for(:user) do |f| %>
                                           <% if @user.errors.any? %>
-                                          <div id="error_explanation">
-                                          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-                                          
-                                          <ul>
-                                          <% @user.errors.full_messages.each do |msg| %>
-                                          <li><%= msg %></li>
+                                            <div id="error_explanation">
+                                            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+                                            
+                                            <ul>
+                                            <% @user.errors.full_messages.each do |msg| %>
+                                            <li><%= msg %></li>
+                                            <% end %>
+                                            </ul>
+                                            </div>
                                           <% end %>
-                                          </ul>
-                                          </div>
-                                        <% end %>
                                      </span>
 						<table>
                                                   
@@ -21,15 +21,15 @@
 								<td><%= f.text_field :username %></td>
 							</tr>
 							<tr>
-								<td><%= f.label 'email:' %></td>
+								<td><font color="red">*</font><%= f.label 'email:' %></td>
 								<td><%= f.text_field :email %></td>
 							</tr>
 							<tr>
-								<td><%= f.label 'password:' %></td>
+								<td><font color="red">*</font><%= f.label 'password:' %></td>
 								<td><%= f.password_field :password %></td>
 							</tr>
 							<tr>
-								<td><%= f.label 'password confirmation:' %></td>
+								<td><font color="red">*</font><%= f.label 'password confirmation:' %></td>
 								<td><%= f.password_field :password_confirmation %></td>
 							</tr>
 							
@@ -37,6 +37,7 @@
 						<%= f.submit 'Sign Up' %>
                                                 <%= f.submit 'Clear Form', :type => 'reset' %>
 					<% end %>
+					<p>(fields with <font color="red">*</font> are compulsory)</p>
 				</div>
 			</div>
 		</div>

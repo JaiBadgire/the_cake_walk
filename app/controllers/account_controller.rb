@@ -21,37 +21,11 @@ class AccountController < ApplicationController
 
   end
 
-  def login
-    username_or_email = params[:user][:username]
-    password = params[:user][:password]
-
-    if username_or_email.rindex('@')
-      email=username_or_email
-      user = User.authenticate_by_email(email, password)
-    else
-      username=username_or_email
-      user = User.authenticate_by_username(username, password)
-    end
-
-    if user
-      redirect_to :root
-    else
-      render :controller =>"account" , :action => "signin"
-    end
-    
-    if user
-     session[:user_id] = user.id
-     flash[:notice] = 'Welcome.'
-     redirect_to :root
-    else
-     flash.now[:error] = 'Unknown user. Please check your username and password.'
-     render :action => "signin"
-    end
-    
-  end
+ 
   
    def logout
    session[:user] = nil
+   session[:cart_id] = nil
    redirect_to :action=>"signin"
    end
 
@@ -82,7 +56,7 @@ class AccountController < ApplicationController
   end
   
   def pastryshop
-    
+    redirect_to :controller =>"gallery" , :action=>"index"
   end
   
   def services

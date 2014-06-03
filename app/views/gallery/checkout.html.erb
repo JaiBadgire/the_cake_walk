@@ -9,11 +9,11 @@
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :credit_card_no %><br />
+    <font color="red">*</font><%= f.label :credit_card_no %><br />
     <%= f.text_field :credit_no %>
   </div>
   <div class="field">
-    <%= f.label :date_of_expiry %><br />
+    <font color="red">*</font><%= f.label :date_of_expiry %><br />
     	<select name="check[month]" id="check_out_month">
 		<option selected value="01">Janurary 
 		<option  value="02">Feburary
@@ -45,15 +45,19 @@
 	</select>
   </div>
   <div class="field">
-    <%= f.label :payment_type %><br />
-    <select name="payment_type"><option value="visa">Visa</option></option><option value="mastercard">Master Card</option></select>
+    <font color="red">*</font><%= f.label :payment_type %><br />
+    <select name="payment_type"><option value="visa">Visa</option></option><option value="mastercard">Master Card</option></select> <img src="/assets/visa_mastercard_2.gif" alt="Visa Mastercard" />
     </div>
+  
   <div class="field">
-    <%= f.label :verification_number %><br />
+    <font color="red">*</font><%= f.label :verification_number %><br />
     <%= f.text_field :verification_number, :size => 2 %>
   </div>
-  <br/><br/>
   <div class="actions">
     <%= f.submit "Submit"%>
   </div>
-  <% end %>
+  <div class="actions">
+    <a href="/gallery/index"> <%= f.submit "Back" %></a>
+  </div>
+<% end %>
+<p>(fields with <font color="red">*</font> are compulsory)</p><br>

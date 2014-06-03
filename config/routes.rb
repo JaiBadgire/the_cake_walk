@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   post "signup" => "account#register"
   root 'account#index'
   get 'account/contact'
+  post 'account/contact'
   get 'account/pastryshop'
   get 'account/services'
   get 'account/about'
