@@ -56,6 +56,7 @@ GEM
     coffee-script-source (1.7.0)
     erubis (2.7.0)
     execjs (2.0.2)
+    geocoder (1.2.1)
     haml (4.0.5)
       tilt
     hike (1.2.3)
@@ -155,6 +156,7 @@ DEPENDENCIES
   activemerchant
   bcrypt-ruby
   coffee-rails (~> 4.0.0)
+  geocoder
   haml
   jbuilder (~> 2.0)
   jquery-rails

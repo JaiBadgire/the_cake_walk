@@ -1,3 +1,6 @@
+<div>
+  Total Amount:  <%= number_to_currency(params[:amount]) %>
+</div>
 <%= flash[:notice] %>
 <%= form_for(:check) do |f| %>
   <div class="field">

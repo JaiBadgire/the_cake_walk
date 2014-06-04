@@ -7,16 +7,16 @@ class AccountController < ApplicationController
     @user = User.new
     
     if request.post?
-    @user = User.authenticate(params[:user][:email],params[:user][:password])
-     if @user
-     session[:user]=@user.id
-   redirect_to :controller =>"gallery" , :action=>"index"
+     @user = User.authenticate(params[:user][:email],params[:user][:password])
+      if @user
+        session[:user]=@user.id
+        redirect_to :controller =>"gallery" , :action=>"index"
    
-     else  
-      flash[:notice] = "Invalid Username / Password"
-          render :controller =>"account" , :action => "signin"
+      else  
+        flash[:notice] = "Invalid Username / Password"
+        render :controller =>"account" , :action => "signin"
    
-     end
+      end
     end
 
   end
@@ -97,7 +97,8 @@ class AccountController < ApplicationController
 		if request.post?			
 			if @user.valid?(params[:user])
 			@user.update_attributes(:password=>params[:user][:password])
-			puts params[:user][:password]
+			# puts params[:user][:password]
+			Notification.user_reset_password(@user).deliver
 			flash[:notice] = "Your password has been reset"
 			redirect_to :controller =>"account" , :action=>"index"
 			

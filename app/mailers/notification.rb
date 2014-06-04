@@ -9,11 +9,12 @@ class Notification < ActionMailer::Base
   
   def signup_confirmation(user)
         @user = user
-        mail(:to => (user.email), :subject => "Welcome to CakeDelight")
+        mail(:to =>"jbadgire27@gmail.com", :subject => "Welcome to CakeDelight")
   end
 
-  def user_reset_password(email)
-  
+  def user_reset_password(user)
+        @user = user
+        mail(:to =>"jbadgire27@gmail.com", :subject => "Your password has been reset")
   end
   
   def purchase_complete(user,cart)

@@ -8,6 +8,7 @@ gem 'bcrypt-ruby', :require=>'bcrypt'
 gem 'paperclip', '~> 3.5.4'
 gem 'activemerchant'
 gem 'haml'
+gem 'geocoder'
 group :development do
   gem 'sqlite3'
 end
